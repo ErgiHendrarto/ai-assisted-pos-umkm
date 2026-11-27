@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Retail Precision Design Tokens */
+    --color-surface: #f9f9ff;
+    --color-surface-dim: #d4dae9;
+    --color-surface-bright: #f9f9ff;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f0f3ff;
+    --color-surface-container: #e8eefd;
+    --color-surface-container-high: #e3e8f7;
+    --color-surface-container-highest: #dde2f1;
+    --color-surface-variant: #dde2f1;
+    --color-surface-tint: #485e89;
+
+    --color-on-surface: #161c26;
+    --color-on-surface-variant: #44474e;
+    --color-inverse-surface: #2b313c;
+    --color-inverse-on-surface: #ecf1ff;
+
+    --color-outline: #74777f;
+    --color-outline-variant: #c4c6d0;
+    --color-divider: #e5e8ed;
+
+    --color-primary: #0a254d;
+    --color-on-primary: #ffffff;
+    --color-primary-container: #243b64;
+    --color-on-primary-container: #90a6d5;
+    --color-inverse-primary: #b0c7f8;
+    --color-primary-fixed: #d7e2ff;
+    --color-primary-fixed-dim: #b0c7f8;
+    --color-on-primary-fixed: #001a40;
+    --color-on-primary-fixed-variant: #304670;
+
+    --color-secondary: #3b608e;
+    --color-on-secondary: #ffffff;
+    --color-secondary-container: #a8ccff;
+    --color-on-secondary-container: #305683;
+    --color-secondary-fixed: #d3e4ff;
+    --color-secondary-fixed-dim: #a5c9fc;
+    --color-on-secondary-fixed: #001c38;
+    --color-on-secondary-fixed-variant: #214874;
+
+    --color-tertiary: #002c13;
+    --color-on-tertiary: #ffffff;
+    --color-tertiary-container: #004521;
+    --color-on-tertiary-container: #5fb779;
+    --color-tertiary-fixed: #9bf6b2;
+    --color-tertiary-fixed-dim: #80d998;
+    --color-on-tertiary-fixed: #00210d;
+    --color-on-tertiary-fixed-variant: #005228;
+
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+
+    --color-background: #f9f9ff;
+    --color-on-background: #161c26;
+}
+
+@layer utilities {
+    .tabular-nums {
+        font-feature-settings: 'tnum' 1;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .bg-subtle-grid {
+        background-image:
+            linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 32px 32px;
+    }
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+@keyframes debtTickerScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.debt-ticker-track {
+    display: flex;
+    width: max-content;
+    animation: debtTickerScroll 32s linear infinite;
+}
+
+.debt-ticker-track:hover {
+    animation-play-state: paused;
+}
